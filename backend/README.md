@@ -40,3 +40,5 @@ Running the server so it returns an error when saving/deleting for testing the c
 ```sh
 npm run error
 ```
+
+psql -U labber -d photolabs_development;

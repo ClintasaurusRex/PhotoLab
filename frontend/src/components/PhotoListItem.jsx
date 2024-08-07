@@ -3,21 +3,21 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 
 
-const sampleDataForPhotoListItem = {
-  id: "1",
-  location: {
-    city: "Montreal",
-    country: "Canada",
-  },
-  imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-  username: "Joe Example",
-  profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
-};
 
-const PhotoListItem = () => {
- return (
-  <h1>Hello photo item</h1>
- )
+
+const PhotoListItem = (props) => {
+  console.log('PROPSSSSS', props);
+  return (
+    <div key={props.id}>
+      <img src={props.imageSource} alt="" />
+      <div>
+        <img src={props.profile} alt="" />
+        <span>{props.username}</span>
+        <span>`{props.location.city}, {props.location.country}`</span>
+      </div>
+
+    </div>
+  )
 };
 
 export default PhotoListItem;
