@@ -24,7 +24,7 @@ const sampleDataForTopicList = [
 const TopicList = (props) => {
 
   const mappedTopics = sampleDataForTopicList.map((topic) => {
-    return <TopicListItem topic={topic} key={topic.id} />
+    return <TopicListItem title={topic.title} key={topic.id} />
   })
 
 

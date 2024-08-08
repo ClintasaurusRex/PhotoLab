@@ -7,12 +7,12 @@ import topics from "mocks/topics";
 
 const TopicListItem = (props) => {
 
-  const topic = props.topic;
+  const topicTitle = props.title;
 
   return (
     <div className="topic-list__item">
       {/* Insert React */}
-      {topic.title}
+      {topicTitle}
     </div>
   );
 };
