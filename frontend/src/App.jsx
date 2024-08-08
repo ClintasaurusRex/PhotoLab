@@ -7,22 +7,27 @@ import './App.scss';
 const App = () => {
 
   const sampleDataForPhotoListItem = {
-  id: "1",
-  location: {
-    city: "Montreal",
-    country: "Canada",
-  },
-  imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-  username: "Joe Example",
-  profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
-};
+    id: "1",
+    location: {
+      city: "Montreal",
+      country: "Canada",
+    },
+    imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
+    username: "Joe Example",
+    profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
+  };
+
+  const photos = new Array(3).fill(sampleDataForPhotoListItem);
 
   return (
     <div className="App">
-      <PhotoListItem photo={sampleDataForPhotoListItem}
-      />
+     {photos.map((photo, index) => (
+      <PhotoListItem key={index} photo={photo} />
+    ))}
     </div>
   );
 };
 
 export default App;
+
+
