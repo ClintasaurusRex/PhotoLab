@@ -1,13 +1,12 @@
 import React from "react";
 
 import "../styles/TopicListItem.scss";
-import topics from "mocks/topics";
 
 
 
 const TopicListItem = (props) => {
 
-  const topicTitle = props.title;
+  const topicTitle = props.topic.title;
 
   return (
     <div className="topic-list__item">
