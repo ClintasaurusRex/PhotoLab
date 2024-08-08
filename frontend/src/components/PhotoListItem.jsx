@@ -8,7 +8,7 @@ import "../styles/PhotoListItem.scss";
 const PhotoListItem = (props) => {
   // console.log('PROPSSSSS', props);
 
-  // const {id, location, urls, user, profile} = props.photo;
+
   const photo = props.photo;
   const user = photo.user;
   const location = photo.location;
