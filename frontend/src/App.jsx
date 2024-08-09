@@ -13,8 +13,8 @@ const App = () => {
 
   const toggleModal = function (photo) {
     console.log("Clicked photo ID:", photo);
-    setIsModalOpen(!isModalOpen);
     setSelectedPhoto(photo);
+    setIsModalOpen(!isModalOpen);
   };
 
 
