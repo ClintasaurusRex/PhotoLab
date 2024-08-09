@@ -32,7 +32,7 @@ const HomeRoute = (props) => {
       {/* Insert React */}
       <TopNavigationBar topics={topics} isFavPhotoExist={ifLiked} favoritedPhotos={favorites} />
       <PhotoList photos={photos} isFavorite={isFavorite}
-        toggleFavorite={toggleFavorite} openModal={props.openModal}
+        toggleFavorite={toggleFavorite} toggleModal={props.toggleModal}
       />
 
     </div>

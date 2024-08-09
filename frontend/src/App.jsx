@@ -12,7 +12,7 @@ const App = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const toggleModal = function (photo) {
-    console.log("Clicked photo ID:", photo);
+    // console.log("Clicked photo ID:", photo);
     setSelectedPhoto(photo);
     setIsModalOpen(!isModalOpen);
   };
@@ -20,8 +20,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute openModal={toggleModal} />
-      {isModalOpen && <PhotoDetailsModal closeModal={toggleModal}
+      <HomeRoute toggleModal={toggleModal} />
+      {isModalOpen && <PhotoDetailsModal toggleModal={toggleModal}
         photo={selectedPhoto} />}
     </div>
   );
