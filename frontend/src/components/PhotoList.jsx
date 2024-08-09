@@ -1,13 +1,18 @@
 import React from "react";
 import PhotoListItem from "./PhotoListItem";
+// import photos from "mocks/photos";
 import "../styles/PhotoList.scss";
-import photos from "mocks/photos";
 
 
-const PhotoList = function(props)  {
+const PhotoList = function (props) {
 
-  const mappedList = photos.map((photo) => {
-    return <PhotoListItem photo={photo} key={photo.id}  />
+
+  const mappedList = props.photos.map((photo) => {
+
+    const selected = props.isFavorite(photo.id);
+    return <PhotoListItem photo={photo} key={photo.id} selected={selected}
+      handleToggle={() => props.toggleFavorite(photo.id)}
+    />
   })
 
 
