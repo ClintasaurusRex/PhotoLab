@@ -11,11 +11,11 @@ const HomeRoute = (props) => {
 
   const [favorites, setFavorites] = useState([]);
 
-  const isFavorite = function(id) {// interface functions
+  const isFavorite = function (id) {// interface functions
     return favorites.includes(id);
   }
 
-  const toggleFavorite = function(id) {
+  const toggleFavorite = function (id) {
     // if not in array add.
     if (!favorites.includes(id)) {
       setFavorites([...favorites, id])
@@ -25,14 +25,15 @@ const HomeRoute = (props) => {
     setFavorites(favorites.filter(favorite => favorite !== id))
   }
 
+  const ifLiked = favorites.length > 0;
 
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigationBar topics={topics} />
+      <TopNavigationBar topics={topics} isFavPhotoExist={ifLiked} favoritedPhotos={favorites} />
       <PhotoList photos={photos} isFavorite={isFavorite}
-      toggleFavorite={toggleFavorite}
-       />
+        toggleFavorite={toggleFavorite}
+      />
 
     </div>
   );
