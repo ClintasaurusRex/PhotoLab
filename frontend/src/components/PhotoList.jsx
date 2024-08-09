@@ -1,6 +1,5 @@
 import React from "react";
 import PhotoListItem from "./PhotoListItem";
-// import photos from "mocks/photos";
 import "../styles/PhotoList.scss";
 
 
@@ -12,8 +11,9 @@ const PhotoList = function (props) {
     const selected = props.isFavorite(photo.id);
     return <PhotoListItem photo={photo} key={photo.id} selected={selected}
       handleToggle={() => props.toggleFavorite(photo.id)}
-    />
-  })
+      openModal={props.openModal}
+    />;
+  });
 
 
 

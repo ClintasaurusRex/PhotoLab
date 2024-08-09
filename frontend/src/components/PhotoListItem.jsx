@@ -8,20 +8,17 @@ import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
 
-
-
   const photo = props.photo;
   const user = photo.user;
   const location = photo.location;
 
 
 
-
-
   return (
     <div className="photo-list__item" >
       <PhotoFavButton selected={props.selected} onClick={props.handleToggle} />
-      <img className="photo-list__image" src={photo.urls.regular} alt="" />
+      <img className="photo-list__image" src={photo.urls.regular} alt=""
+        onClick={props.openModal} />
       <div>
         <img className="photo-list__user-profile" src={user.profile} alt="" />
         <div className="photo-list__user-info">
@@ -30,7 +27,7 @@ const PhotoListItem = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default PhotoListItem;

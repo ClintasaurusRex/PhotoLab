@@ -13,17 +13,17 @@ const HomeRoute = (props) => {
 
   const isFavorite = function (id) {// interface functions
     return favorites.includes(id);
-  }
+  };
 
   const toggleFavorite = function (id) {
     // if not in array add.
     if (!favorites.includes(id)) {
-      setFavorites([...favorites, id])
+      setFavorites([...favorites, id]);
       return;
     }
     //otherwise remove the id.
-    setFavorites(favorites.filter(favorite => favorite !== id))
-  }
+    setFavorites(favorites.filter(favorite => favorite !== id));
+  };
 
   const ifLiked = favorites.length > 0;
 
@@ -32,7 +32,7 @@ const HomeRoute = (props) => {
       {/* Insert React */}
       <TopNavigationBar topics={topics} isFavPhotoExist={ifLiked} favoritedPhotos={favorites} />
       <PhotoList photos={photos} isFavorite={isFavorite}
-        toggleFavorite={toggleFavorite}
+        toggleFavorite={toggleFavorite} openModal={props.openModal}
       />
 
     </div>
