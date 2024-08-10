@@ -24,6 +24,9 @@ const HomeRoute = (props) => {
     //otherwise remove the id.
     setFavorites(favorites.filter(favorite => favorite !== id));
   };
+  // console.log('Props in HomeRoute:', props);
+  // console.log('isFavorite function in HomeRoute:', isFavorite);
+  // console.log(props);
 
   const ifLiked = favorites.length > 0;
 
@@ -33,6 +36,7 @@ const HomeRoute = (props) => {
       <TopNavigationBar topics={topics} isFavPhotoExist={ifLiked} favoritedPhotos={favorites} />
       <PhotoList photos={photos} isFavorite={isFavorite}
         toggleFavorite={toggleFavorite} toggleModal={props.toggleModal}
+
       />
 
     </div>
