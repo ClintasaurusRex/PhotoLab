@@ -4,23 +4,39 @@ import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 
 const PhotoDetailsModal = (props) => {
-  // console.log('Selected Photos Here:', props.photo);
-  // const { photo, similarPhotos, toggleModal } = props;
-  const photo = props.photo;
+
+  const { photo, similarPhotos, toggleModal } = props;
 
   return (
-    <div className="photo-details-modal">
-      <button className="photo-details-modal__close-button"
-        onClick={props.toggleModal}>
-        <img src={closeSymbol} alt="close symbol" />
-      </button>
-      <div className='.photo-details-modal__image'>
-        <img src={photo.urls.regular} alt="" />
+    <div className='photo-details-modal'>
+      <div className='photo-details-modal__top-bar'>
+        <button className='photo-details-modal__top-bar' onClick={toggleModal} >
+          <img src={closeSymbol} alt="close symbol" />
+        </button>
+      </div>
+
+      <div className='photo-details-modal__images'>
+        <img className='photo-details-modal__image' src={photo.urls.regular} alt="" />
+      </div>
+
+      <div className='photo-details-modal__header'>
+        <div className='photo-details-modal__photographer-details'>
+          <img
+            className='photo-details-modal__photographer-profile'
+            src={photo.user.profile}
+            alt={photo.user.username}
+          />
+          <div className='photo-details-modal__photographer-info'>
+            <div>{photo.user.username}</div>
+            <div className='photo-details-modal__photographer-location'>
+              {photo.location.city}, {photo.location.country}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="photo-details-modal__similar-photos">
-        <h3>Similar Photos</h3>
-        <PhotoList photos={props.similarPhotos}
-          toggleModal={props.toggleModal} />
+        <h3 className="photo-details-modal__header">Similar Photos</h3>
+        <PhotoList photos={similarPhotos} toggleModal={toggleModal} />
       </div>
     </div>
   );

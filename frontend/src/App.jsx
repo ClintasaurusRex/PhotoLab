@@ -33,7 +33,10 @@ const App = (props) => {
     <div className="App">
       <HomeRoute toggleModal={toggleModal} />
       {isModalOpen && <PhotoDetailsModal toggleModal={toggleModal}
-        photo={selectedPhoto} similarPhotos={similarPhotos} />}
+        photo={selectedPhoto}
+        similarPhotos={similarPhotos}
+
+      />}
     </div>
   );
 };
