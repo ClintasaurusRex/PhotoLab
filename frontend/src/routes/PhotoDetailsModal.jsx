@@ -3,6 +3,8 @@ import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 
 const PhotoDetailsModal = (props) => {
+  console.log('Selected Photos Here:', props.photo);
+
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button"
