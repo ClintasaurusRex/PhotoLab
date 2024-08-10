@@ -1,8 +1,8 @@
 import React from 'react';
 import PhotoList from 'components/PhotoList';
-import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoFavButton from 'components/PhotoFavButton';
+import '../styles/PhotoDetailsModal.scss';
 
 
 const PhotoDetailsModal = (props) => {
@@ -18,7 +18,9 @@ const PhotoDetailsModal = (props) => {
         </button>
       </div>
       <div className='photo-details-modal__images'>
-        <PhotoFavButton selected={selected} onClick={() => props.toggleFavorite(photo.id)} />
+        <PhotoFavButton className='photo-details-modal__fav-icon-svg'
+          isModal={true}
+          selected={selected} onClick={() => props.toggleFavorite(photo.id)} />
         <img className='photo-details-modal__image' src={photo.urls.regular} alt="" />
       </div>
 
@@ -39,10 +41,12 @@ const PhotoDetailsModal = (props) => {
       </div>
       <div className="photo-details-modal__similar-photos">
         <h3 className="photo-details-modal__header">Similar Photos</h3>
-        <PhotoList photos={similarPhotos}
+        <PhotoList
+          photos={similarPhotos}
           toggleModal={toggleModal}
           toggleFavorite={props.toggleFavorite}
           isFavorite={props.isFavorite}
+          favorites={props.favorites}
         />
       </div>
     </div>

@@ -9,6 +9,14 @@
   width: 55%;
   overflow-y: scroll;
   border-radius: 12px;
+
+  div.photo-list__fav-icon.modal {
+    transform: scale(1.5);
+    margin-left: 20px;
+    top: 27px;
+
+  }
+
 }
 
 .photo-details-modal__close-button {
@@ -46,6 +54,7 @@
 .photo-details-modal__photographer-details {
   display: flex;
   font-size: 16px;
+
 }
 
 .photo-details-modal__header {
@@ -55,6 +64,7 @@
   margin-top: 24px;
   margin-bottom: 24px;
   width: 90%;
+  margin-left: 42px;
 }
 
 .photo-details-modal__photographer-location {

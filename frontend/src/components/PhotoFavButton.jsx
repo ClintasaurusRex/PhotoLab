@@ -10,9 +10,9 @@ function PhotoFavButton(props) {
 
 
   return (
-    <div className="photo-list__fav-icon" onClick={props.onClick}>
-      <div className="photo-list__fav-icon-svg">
-        <FavIcon selected={props.selected}  />
+    <div className={`photo-list__fav-icon ${props.isModal ? "modal" : ""}`} onClick={props.onClick}>
+      <div className={`photo-list__fav-icon-svg`}>
+        <FavIcon selected={props.selected} />
       </div>
     </div>
   );
