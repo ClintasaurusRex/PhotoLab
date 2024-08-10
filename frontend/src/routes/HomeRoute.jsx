@@ -9,33 +9,17 @@ import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
 
-  const [favorites, setFavorites] = useState([]);
 
-  const isFavorite = function (id) {// interface functions
-    return favorites.includes(id);
-  };
-
-  const toggleFavorite = function (id) {
-    // if not in array add.
-    if (!favorites.includes(id)) {
-      setFavorites([...favorites, id]);
-      return;
-    }
-    //otherwise remove the id.
-    setFavorites(favorites.filter(favorite => favorite !== id));
-  };
-  // console.log('Props in HomeRoute:', props);
-  // console.log('isFavorite function in HomeRoute:', isFavorite);
-  // console.log(props);
-
-  const ifLiked = favorites.length > 0;
 
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigationBar topics={topics} isFavPhotoExist={ifLiked} favoritedPhotos={favorites} />
-      <PhotoList photos={photos} isFavorite={isFavorite}
-        toggleFavorite={toggleFavorite} toggleModal={props.toggleModal}
+      <TopNavigationBar topics={topics} isFavPhotoExist={props.isFavPhotoExist} favoritedPhotos={props.favorites} />
+
+      <PhotoList photos={photos}
+        isFavorite={props.isFavorite}
+        toggleFavorite={props.toggleFavorite}
+        toggleModal={props.toggleModal}
 
       />
 

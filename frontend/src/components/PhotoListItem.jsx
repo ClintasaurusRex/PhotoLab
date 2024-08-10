@@ -17,7 +17,7 @@ const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item" >
       <PhotoFavButton selected={props.selected} onClick={props.handleToggle} />
-      <img className="photo-list__image" src={photo.urls.regular} alt=""
+      <img className="photo-list__image" src={photo.urls.full} alt=""
         onClick={() => props.toggleModal(props.photo)} />
       <div>
         <img className="photo-list__user-profile" src={user.profile} alt="" />

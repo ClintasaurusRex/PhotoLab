@@ -4,7 +4,7 @@ import "../styles/PhotoList.scss";
 
 
 const PhotoList = function (props) {
-  console.log('PhotoList Props', props);
+  // console.log('PhotoList Props', props);
 
 
   const mappedList = props.photos.map((photo) => {
@@ -17,7 +17,7 @@ const PhotoList = function (props) {
 
     const selected = typeof props.isFavorite === 'function' ? props.isFavorite(photo.id) : false;
 
-    console.log('isFavorite', props.isFavorite);
+    // console.log('isFavorite', props.isFavorite);
 
     return <PhotoListItem photo={photo} key={photo.id} selected={selected}
       handleToggle={() => props.toggleFavorite(photo.id)}
