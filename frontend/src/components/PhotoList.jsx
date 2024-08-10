@@ -9,11 +9,6 @@ const PhotoList = function (props) {
 
   const mappedList = props.photos.map((photo) => {
 
-    // const selected = props.isFavorite(photo.id);
-    // console.log('Props received in PhotoList:', props);
-    // console.log('isFavorite in PhotoList:', props.isFavorite);
-    // console.log('toggleFavorite in PhotoList:', props.toggleFavorite);
-
 
     const selected = typeof props.isFavorite === 'function' ? props.isFavorite(photo.id) : false;
 
