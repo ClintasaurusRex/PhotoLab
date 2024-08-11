@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
-import photos from 'mocks/photos';
+
 // hooks
 import useApplicationData from 'hooks/useApplicationData';
 
@@ -26,7 +26,9 @@ const App = (props) => {
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
         isFavPhotoExist={state.ifLiked}
-        favoritedPhotos={state.favorites} />
+        favoritedPhotos={state.favorites}
+        photos={state.photoData}
+      />
 
       {state.isModalOpen && <PhotoDetailsModal
         toggleModal={toggleModal}
