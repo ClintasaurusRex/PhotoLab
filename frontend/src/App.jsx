@@ -25,7 +25,7 @@ const App = (props) => {
         toggleModal={toggleModal}
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
-        isFavPhotoExist={state.ifLiked}
+        isFavPhotoExist={state.hasFavorites}
         favoritedPhotos={state.favorites}
         photos={state.photoData}
       />
@@ -35,7 +35,7 @@ const App = (props) => {
         photo={state.selectedPhoto}
         similarPhotos={state.similarPhotos}
         toggleFavorite={toggleFavorite}
-        isFavPhotoExist={state.ifLiked}
+        isFavPhotoExist={state.hasFavorites}
         isFavorite={isFavorite}
 
       />}
