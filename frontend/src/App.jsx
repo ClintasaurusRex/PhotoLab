@@ -9,7 +9,7 @@ import './App.scss';
 
 // Note: Rendering a single component to build components in isolation
 const App = (props) => {
-
+  // Destructuring state and functions from the custom hook
   const {
     state,
     toggleModal,

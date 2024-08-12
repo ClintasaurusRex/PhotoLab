@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PhotoList from 'components/PhotoList';
 import TopNavigationBar from 'components/TopNavigationBar';
-// import photos from 'mocks/photos';
-// import topics from 'mocks/topics';
+
 import '../styles/HomeRoute.scss';
 
 
@@ -11,12 +10,13 @@ const HomeRoute = (props) => {
 
   return (
     <div className="home-route">
-      {/* Insert React */}
+      {/* Top Nav bar component */}
       <TopNavigationBar
         topics={props.topics}
         isFavPhotoExist={props.isFavPhotoExist}
         favoritedPhotos={props.favorites} />
 
+      {/* Main photo list component */}
       <PhotoList
         photos={props.photos}
         isFavorite={props.isFavorite}

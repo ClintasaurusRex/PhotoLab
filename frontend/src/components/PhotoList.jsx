@@ -4,15 +4,11 @@ import "../styles/PhotoList.scss";
 
 
 const PhotoList = function (props) {
-  // console.log('PhotoList Props', props);
 
-
+  // Map through photos and create PhotoListItem components
   const mappedList = props.photos.map((photo) => {
-
-
+    // Determine if the photo is favorited
     const selected = typeof props.isFavorite === 'function' ? props.isFavorite(photo.id) : false;
-
-    // console.log('isFavorite', props.isFavorite);
 
     return <PhotoListItem photo={photo} key={photo.id} selected={selected}
       handleToggle={() => props.toggleFavorite(photo.id)}
@@ -21,10 +17,10 @@ const PhotoList = function (props) {
   });
 
 
-
+  // Render the list of photos
   return (
     <ul className="photo-list">
-      {/* Insert React */}
+      {/* The mapped list rendered*/}
       {mappedList}
     </ul>
   );

@@ -5,12 +5,10 @@ import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
 
-
-
-
-
   return (
     <div className={`photo-list__fav-icon ${props.isModal ? "modal" : ""}`} onClick={props.onClick}>
+
+      {/* Favorite icon wrapper */}
       <div className={`photo-list__fav-icon-svg`}>
         <FavIcon selected={props.selected} />
       </div>

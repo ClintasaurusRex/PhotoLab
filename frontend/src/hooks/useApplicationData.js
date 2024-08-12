@@ -1,6 +1,4 @@
 import { useReducer, useEffect } from "react";
-// import photos from "mocks/photos";
-// import { response } from "express";
 
 const ACTIONS = {
   TOGGLE_MODAL: 'TOGGLE_MODAL',
@@ -10,6 +8,7 @@ const ACTIONS = {
   GET_PHOTOS_BY_TOPICS: 'GET_PHOTOS_BY_TOPICS'
 };
 
+// Initial state for the application
 const initialState = {
   isModalOpen: false,
   selectedPhoto: null,
@@ -19,35 +18,33 @@ const initialState = {
   topicData: [],
 };
 
-
-
+// Reducer function to handle state updates
 function reducer(state, action) {
   switch (action.type) {
-    case ACTIONS.TOGGLE_MODAL:
+    case ACTIONS.TOGGLE_MODAL: // Handle modal toggle
       return {
         ...state,
         isModalOpen: !state.isModalOpen,
         selectedPhoto: action.photo || null,
-        // similarPhotos: action.photo ? fetchSimilarPhotos(action.photo) : [],
       };
-    case ACTIONS.TOGGLE_FAVORITE:
+    case ACTIONS.TOGGLE_FAVORITE: // Handle favorite toggle
       return {
         ...state,
         favorites: state.favorites.includes(action.id)
           ? state.favorites.filter(favorite => favorite !== action.id)
           : [...state.favorites, action.id],
       };
-    case ACTIONS.SET_PHOTO_DATA:
+    case ACTIONS.SET_PHOTO_DATA: // Set photo data
       return {
         ...state,
         photoData: action.payload,
       };
-    case ACTIONS.SET_TOPIC_DATA:
+    case ACTIONS.SET_TOPIC_DATA:// Set topic data
       return {
         ...state,
         topicData: action.payload,
       };
-    case ACTIONS.GET_PHOTOS_BY_TOPICS:
+    case ACTIONS.GET_PHOTOS_BY_TOPICS:// Get photos by topics
       return {
         ...state,
         photoData: action.payload,
@@ -60,14 +57,10 @@ function reducer(state, action) {
   }
 }
 
-// const fetchSimilarPhotos = (selectedPhoto) => {
-//   return photos.filter(photo => photo.id !== selectedPhoto.id);
-// };
-
 const useApplicationData = function () {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-
+  // Fetch initial data on component mount
   useEffect(() => {
     const photoPromise = fetch('/api/photos');
     const topicsPromise = fetch('/api/topics');
@@ -89,19 +82,22 @@ const useApplicationData = function () {
 
   }, []);
 
+  // Function to toggle modal
   const toggleModal = (photo) => {
     dispatch({ type: ACTIONS.TOGGLE_MODAL, photo });
-
   };
 
+  // Function to check if a photo is favorited
   const isFavorite = (id) => {
     return state.favorites.includes(id);
   };
 
+  // Function to toggle favorite status of a photo
   const toggleFavorite = (id) => {
     dispatch({ type: ACTIONS.TOGGLE_FAVORITE, id });
   };
 
+  // Return state and functions
   return {
     state: {
       ...state,
