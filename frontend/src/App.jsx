@@ -28,6 +28,7 @@ const App = (props) => {
         isFavPhotoExist={state.hasFavorites}
         favoritedPhotos={state.favorites}
         photos={state.photoData}
+        topics={state.topicData}
       />
 
       {state.isModalOpen && <PhotoDetailsModal

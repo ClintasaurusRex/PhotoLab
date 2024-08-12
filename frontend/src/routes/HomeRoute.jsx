@@ -9,14 +9,16 @@ import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
 
-
-
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigationBar topics={topics} isFavPhotoExist={props.isFavPhotoExist} favoritedPhotos={props.favorites} />
+      <TopNavigationBar
+        topics={topics}
+        isFavPhotoExist={props.isFavPhotoExist}
+        favoritedPhotos={props.favorites} />
 
-      <PhotoList photos={photos}
+      <PhotoList
+        photos={photos}
         isFavorite={props.isFavorite}
         toggleFavorite={props.toggleFavorite}
         toggleModal={props.toggleModal}

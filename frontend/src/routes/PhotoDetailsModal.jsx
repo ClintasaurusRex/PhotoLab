@@ -5,8 +5,9 @@ import PhotoFavButton from 'components/PhotoFavButton';
 import '../styles/PhotoDetailsModal.scss';
 
 
-const PhotoDetailsModal = (props) => {
 
+const PhotoDetailsModal = (props) => {
+  // destructure for props
   const { photo, similarPhotos, toggleModal } = props;
 
   const selected = typeof props.isFavorite === 'function' ? props.isFavorite(photo.id) : false;
@@ -53,5 +54,7 @@ const PhotoDetailsModal = (props) => {
     </div>
   );
 };
+
+
 
 export default PhotoDetailsModal;
