@@ -62,5 +62,11 @@ This project showcases proficiency in modern web development practices, includin
 Feel free to explore the codebase!
 
 ## Screenshots
-
+- Main page
 !["PhotoLabs main page"](https://github.com/ClintasaurusRex/photoLab/blob/master/docs/PhotoLabs-main.png?raw=true)
+
+- Image Modal
+!["PhotoLabs modal"](/home/tins1/Pictures/PhotoLabs-modal.png)
+
+- Similar Photos
+- !["PhotoLabs similar photos"](/home/tins1/Pictures/PhotoLabs-similarPhotos.png)
