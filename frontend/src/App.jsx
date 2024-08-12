@@ -26,7 +26,6 @@ const App = (props) => {
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
         isFavPhotoExist={state.hasFavorites}
-        favoritedPhotos={state.favorites}
         photos={state.photoData}
         topics={state.topicData}
       />

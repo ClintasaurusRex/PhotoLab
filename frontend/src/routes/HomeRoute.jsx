@@ -14,7 +14,7 @@ const HomeRoute = (props) => {
       <TopNavigationBar
         topics={props.topics}
         isFavPhotoExist={props.isFavPhotoExist}
-        favoritedPhotos={props.favorites} />
+      />
 
       {/* Main photo list component */}
       <PhotoList

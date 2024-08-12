@@ -8,7 +8,7 @@ import '../styles/PhotoDetailsModal.scss';
 
 const PhotoDetailsModal = (props) => {
   // destructure for props
-  const { photo, similarPhotos, toggleModal } = props;
+  const { photo, toggleModal } = props;
 
   // Determine if the photo is favorited
   const selected = typeof props.isFavorite === 'function' ? props.isFavorite(photo.id) : false;
