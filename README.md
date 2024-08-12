@@ -66,7 +66,7 @@ Feel free to explore the codebase!
 !["PhotoLabs main page"](https://github.com/ClintasaurusRex/photoLab/blob/master/docs/PhotoLabs-main.png?raw=true)
 
 - Image Modal
-!["PhotoLabs modal"](/home/tins1/Pictures/PhotoLabs-modal.png)
+!["PhotoLabs modal"](https://github.com/ClintasaurusRex/photoLab/blob/master/docs/PhotoLabs-modal.png?raw=true)
 
 - Similar Photos
-- !["PhotoLabs similar photos"](/home/tins1/Pictures/PhotoLabs-similarPhotos.png)
+!["PhotoLabs similar photos"](https://github.com/ClintasaurusRex/photoLab/blob/master/docs/PhotoLabs-similarPhotos.png?raw=true)
