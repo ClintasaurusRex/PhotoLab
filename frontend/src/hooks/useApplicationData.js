@@ -12,7 +12,6 @@ const ACTIONS = {
 const initialState = {
   isModalOpen: false,
   selectedPhoto: null,
-  // similarPhotos: [],
   favorites: [],
   photoData: [],
   topicData: [],
@@ -64,6 +63,7 @@ const useApplicationData = function () {
   useEffect(() => {
     const photoPromise = fetch('/api/photos');
     const topicsPromise = fetch('/api/topics');
+    // const photoTopicsPromise = fetch('/api/topics/photos');
 
     const promises = [photoPromise, topicsPromise];
 
@@ -78,6 +78,7 @@ const useApplicationData = function () {
       .then(response => {
         dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: response[0] });
         dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: response[1] });
+        // dispatch({ type: ACTIONS.GET_PHOTOS_BY_TOPICS, payload: response})
       });
 
   }, []);
@@ -97,6 +98,15 @@ const useApplicationData = function () {
     dispatch({ type: ACTIONS.TOGGLE_FAVORITE, id });
   };
 
+  const topicsButtons = function(id) {
+    fetch(`/api/topics/photos/${id}`)
+    .then((res) => {
+      return res.json()
+    })
+    .then(data => dispatch({ type: ACTIONS.GET_PHOTOS_BY_TOPICS, payload: data}))
+    .catch(error => console.log(error))
+  }
+
   // Return state and functions
   return {
     state: {
@@ -106,6 +116,7 @@ const useApplicationData = function () {
     toggleModal,
     toggleFavorite,
     isFavorite,
+    topicsButtons
   };
 
 

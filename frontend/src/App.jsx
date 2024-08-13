@@ -9,12 +9,15 @@ import './App.scss';
 
 // Note: Rendering a single component to build components in isolation
 const App = (props) => {
+
+
   // Destructuring state and functions from the custom hook
   const {
     state,
     toggleModal,
     toggleFavorite,
     isFavorite,
+    topicsButtons
   } = useApplicationData();
 
 
@@ -28,6 +31,7 @@ const App = (props) => {
         isFavPhotoExist={state.hasFavorites}
         photos={state.photoData}
         topics={state.topicData}
+        topicsButtons={topicsButtons}
       />
 
       {state.isModalOpen && <PhotoDetailsModal

@@ -4,13 +4,16 @@ import TopicListItem from "./TopicListItem";
 import "../styles/TopicList.scss";
 
 
-
-
-
 const TopicList = (props) => {
+
+
   // Mapping topics for render
   const mappedTopics = props.topics.map((topic) => {
-    return <TopicListItem topic={topic} key={topic.id} />;
+    return <TopicListItem
+      topic={topic}
+      key={topic.id}
+      topicsButtons={props.topicsButtons}
+    />;
   });
 
   return (
