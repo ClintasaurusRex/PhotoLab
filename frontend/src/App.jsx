@@ -17,7 +17,9 @@ const App = (props) => {
     toggleModal,
     toggleFavorite,
     isFavorite,
-    topicsButtons
+    topicsButtons,
+    search,
+    setSearch
   } = useApplicationData();
 
 
@@ -32,6 +34,8 @@ const App = (props) => {
         photos={state.photoData}
         topics={state.topicData}
         topicsButtons={topicsButtons}
+        search={search}
+        setSearch={setSearch}
       />
 
       {state.isModalOpen && <PhotoDetailsModal

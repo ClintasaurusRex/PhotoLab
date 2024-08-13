@@ -1,11 +1,12 @@
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useState } from "react";
 
 const ACTIONS = {
   TOGGLE_MODAL: 'TOGGLE_MODAL',
   TOGGLE_FAVORITE: 'TOGGLE_FAVORITE',
   SET_PHOTO_DATA: 'SET_PHOTO_DATA',
   SET_TOPIC_DATA: 'SET_TOPIC_DATA',
-  GET_PHOTOS_BY_TOPICS: 'GET_PHOTOS_BY_TOPICS'
+  GET_PHOTOS_BY_TOPICS: 'GET_PHOTOS_BY_TOPICS',
+  GET_USERNAME: 'GET_USERNAME'
 };
 
 // Initial state for the application
@@ -15,6 +16,7 @@ const initialState = {
   favorites: [],
   photoData: [],
   topicData: [],
+  userData: [],
 };
 
 // Reducer function to handle state updates
@@ -48,6 +50,11 @@ function reducer(state, action) {
         ...state,
         photoData: action.payload,
       };
+    case ACTIONS.GET_USERNAME:// Get photos by username
+      return {
+        ...state,
+        userData: action.payload,
+      };
 
     default:
       throw new Error(
@@ -57,13 +64,15 @@ function reducer(state, action) {
 }
 
 const useApplicationData = function () {
+  const [search, setSearch] = useState("") // use best practices says dont use complex state
+
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Fetch initial data on component mount
   useEffect(() => {
+
     const photoPromise = fetch('/api/photos');
     const topicsPromise = fetch('/api/topics');
-    // const photoTopicsPromise = fetch('/api/topics/photos');
 
     const promises = [photoPromise, topicsPromise];
 
@@ -78,7 +87,6 @@ const useApplicationData = function () {
       .then(response => {
         dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: response[0] });
         dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: response[1] });
-        // dispatch({ type: ACTIONS.GET_PHOTOS_BY_TOPICS, payload: response})
       });
 
   }, []);
@@ -116,7 +124,9 @@ const useApplicationData = function () {
     toggleModal,
     toggleFavorite,
     isFavorite,
-    topicsButtons
+    topicsButtons,
+    search,
+    setSearch
   };
 
 

@@ -15,6 +15,8 @@ const HomeRoute = (props) => {
         topics={props.topics}
         isFavPhotoExist={props.isFavPhotoExist}
         topicsButtons={props.topicsButtons}
+        search={props.search}
+        setSearch={props.setSearch}
       />
 
       {/* Main photo list component */}
@@ -23,7 +25,7 @@ const HomeRoute = (props) => {
         isFavorite={props.isFavorite}
         toggleFavorite={props.toggleFavorite}
         toggleModal={props.toggleModal}
-
+        search={props.search}
       />
 
     </div>

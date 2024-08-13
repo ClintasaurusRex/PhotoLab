@@ -4,9 +4,11 @@ import "../styles/PhotoList.scss";
 
 
 const PhotoList = function (props) {
-
+  const filteredList = props.photos.filter((photo) => {
+    return !props.search || photo.user.name.includes(props.search) || photo.location.city.includes(props.search);
+  });
   // Map through photos and create PhotoListItem components
-  const mappedList = props.photos.map((photo) => {
+  const mappedList = filteredList.map((photo) => {
     // Determine if the photo is favorited
     const selected = typeof props.isFavorite === 'function' ? props.isFavorite(photo.id) : false;
 
