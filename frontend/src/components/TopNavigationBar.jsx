@@ -22,8 +22,6 @@ const TopNavigation = (props) => {
       <div>
         <input type="text" placeholder='search' value={props.search}
           onChange={e => props.setSearch(e.target.value)} />
-        {/* onSubmit???? */}
-        {/* <button onClick={() => }>search</button> */}
       </div>
       {/* List of topics */}
       <TopicList topics={props.topics} topicsButtons={props.topicsButtons} />

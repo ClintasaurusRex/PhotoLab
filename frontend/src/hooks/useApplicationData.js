@@ -6,7 +6,6 @@ const ACTIONS = {
   SET_PHOTO_DATA: 'SET_PHOTO_DATA',
   SET_TOPIC_DATA: 'SET_TOPIC_DATA',
   GET_PHOTOS_BY_TOPICS: 'GET_PHOTOS_BY_TOPICS',
-  GET_USERNAME: 'GET_USERNAME'
 };
 
 // Initial state for the application
@@ -16,7 +15,6 @@ const initialState = {
   favorites: [],
   photoData: [],
   topicData: [],
-  userData: [],
 };
 
 // Reducer function to handle state updates
@@ -50,12 +48,6 @@ function reducer(state, action) {
         ...state,
         photoData: action.payload,
       };
-    case ACTIONS.GET_USERNAME:// Get photos by username
-      return {
-        ...state,
-        userData: action.payload,
-      };
-
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
